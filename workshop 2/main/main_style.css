@@ -1,0 +1,8 @@
+body {
+	/*80px are based on the height it sets*/
+
+	background-color: #b1f2ff;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}

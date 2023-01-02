@@ -1,0 +1,139 @@
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	text-decoration: none;
+	color: black;	
+}
+
+html{
+	font-size: 62.5%;
+}
+
+.details{
+	max-width: 1500px;
+	width: 80%;
+	margin: 30px auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.details .spotname{
+	font-size: 30px;
+}
+
+.details .cards{
+	height: 350px;
+	border: 2px solid lightgray;
+	margin: 20px;
+	display: flex;
+}
+
+.details .cards .images{
+	width: 50%;
+}
+
+.details .cards .images img{
+	width:100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.details .cards .caption{
+	line-height: 3em;
+	margin-left: 30px;
+	position: relative;
+	width: 75%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.details .cards .caption p{
+	font-size: 1.5rem;
+}
+
+.details .cards .caption button{
+	background-color: white;
+	border: 2px solid #0073ff;
+	padding: 1%;
+	width: 15%;
+	cursor: pointer;
+	font-weight: bold;
+	transition-duration: 0.3s;
+	position: absolute;
+	bottom: 8px;
+  	right: 16px;
+}
+
+.container{
+	max-width: 1500px;
+	width: 80%;
+	margin: 30px auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.container .related{
+	font-size: 30px;
+}
+
+.container table{
+    font-size:20px;
+}
+
+.container table .btn{
+    display: inline-block;
+    padding:10px 30px;
+    border:1px solid #334;
+    color:#334;
+    font-size: 16px;
+  }
+  
+  .container table .btn:hover{
+    background-color: #0073ff;
+    border-color: #0073ff;
+    color:#fff;
+  }
+
+  .btn{
+    display: inline-block;
+    background: white;
+    margin-top: 1rem;
+    color: black;
+    font-size: 1.7rem;
+    padding:1rem 3rem;
+    cursor: pointer;
+    border: 2px solid #0073ff;
+}
+
+
+#home{
+    margin-top: 20px;
+    display: inline-block;
+    padding:13px 30px;
+    border:1px solid #334;
+    color:#334;
+    font-size: 16px;
+    background-color: #fff;
+    cursor: pointer;
+	margin-left: 45%;
+	margin-bottom: 5%;
+}
+  
+#home:hover{
+    background-color: #0073ff;
+    border-color: #0073ff;
+    color:#fff;
+}
+
+#home a{
+	text-decoration: none;
+	color:#334;
+}
+
+#home:hover a{
+	color: #fff;
+}

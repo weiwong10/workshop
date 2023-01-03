@@ -1,6 +1,8 @@
 <?php
-include "../connect.php";?>
-
+include "../connect.php";
+include("navAdmin/nav_admin.php");
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,9 +15,9 @@ include "../connect.php";?>
  <div>
 <nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand">List Users</a>
+    <a class="navbar-brand">List of Users</a>
     <form class="d-flex" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search data" aria-label="Search">
+      <input class="form-control me-2" type="text" placeholder="Search data" aria-label="Search">
       <button class="btn btn-outline-success" type="submit">Search</button>
     </form>
     <div class="container-fluid">

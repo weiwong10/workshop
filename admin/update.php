@@ -1,32 +1,33 @@
 <?php
 include ('../connect.php');
+include("navAdmin/nav_admin.php");
 $username=$_GET['updateusername'];
-$sql = "select username,name,contactNo,email,status_acc from users";
+$sql = "select name,contactNo,email,status_acc from users where username ='$username'";
 $result = mysqli_query($conn,$sql);
 if ($result) {
   while ($row = mysqli_fetch_assoc($result)) {
-    $username = $row['username'];
     $name = $row['name'];
     $contactNo = $row['contactNo'];
     $email = $row['email'];
-    $status_acc = $row['status_acc'];
   }
 }
+
 if (isset($_POST['submit'])) {
-  $name = $_POST['name'];
-  $contactNo = $_POST['contactNo'];
-  $email = $_POST['email'];
+  $newName = $_POST['name'];
+  $newContactNo = $_POST['contact'];
+  $newEmail = $_POST['email'];
   $status_acc = $_POST['status_acc'];
 
-  $sql = "update from users set username-$username,name='$name', contactNo ='$contactNo', email='$email', status_acc='$status_acc' where username=$username";
+  $sql = "update users set name='$newName', contactNo ='$newContactNo', email='$newEmail', status_acc='$status_acc' where username= '$username'";
   $result = mysqli_query($conn, $sql);
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
     // header('location: display.php');
   } else {
     // echo "updated successfully";
+    echo "Updated";
     header('location: display.php');
-  }
+  } 
 }
 ?> 
 <!DOCTYPE html>
@@ -40,6 +41,7 @@ if (isset($_POST['submit'])) {
 <body>
 
     <div class="container my-5">
+    
     <form method="post">
     <div class="form-group">
   <label>Name</label>
@@ -56,15 +58,15 @@ if (isset($_POST['submit'])) {
     <input type="text" class="form-control" placeholder="Enter Email"
     name="email" autocomplete="off" value=<?php echo $email;?>>
     </div>
-    <form class="form-inline">
+    <!--<form class="form-inline" method="post">-->
   <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Status Account</label>
-  <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+  <select name="status_acc" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
     <option selected>Choose...</option>
-    <option value="1">Active</option>
-    <option value="2">Unactive</option>
+    <option value="Active">Active</option>
+    <option value="Unactive">Unactive</option>
   </select>
   <div>
-  <button type="submit" class="btn btn-primary my-1" name="Submit">Submit</button>
+  <button type="submit" class="btn btn-primary my-1" name="submit">Submit</button>
 </form>
     <div>
 </body>

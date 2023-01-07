@@ -115,6 +115,7 @@ ALTER TABLE Featured AUTO_INCREMENT =1000;
 
 CREATE TABLE Trip(
     tripID          INT             AUTO_INCREMENT,
+    title	    VARCHAR(300)    NOT NULL,
     start_date      DATE            NOT NULL,
     end_date        DATE            NOT NULL,
     duration        INT		            ,
@@ -126,6 +127,7 @@ CREATE TABLE Trip(
     themeID         INT             NOT NULL,
     paymentID       INT             DEFAULT NULL,
     featuredID      INT             DEFAULT NULL,
+    image	    BLOB	    DEFAULT NULL,
 
     CONSTRAINT tripID_PK PRIMARY KEY(tripID),
     CONSTRAINT FK_trip_username FOREIGN KEY(username) REFERENCES Users(username),
@@ -169,7 +171,6 @@ CREATE TABLE Travel_Itinerary(
     tripID          INT             NOT NULL,
     spotID          VARCHAR(10)     NOT NULL,
     description     VARCHAR(1000)           ,
-    duration_stay   INT		            ,
     PRIMARY KEY(tripID, spotID)             ,
 
     CONSTRAINT FK_itinerary_tripID FOREIGN KEY(tripID) REFERENCES Trip(tripID),

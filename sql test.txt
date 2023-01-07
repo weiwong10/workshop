@@ -116,6 +116,7 @@ ALTER TABLE Featured AUTO_INCREMENT =1000;
 CREATE TABLE Trip(
     tripID          INT             AUTO_INCREMENT,
     title	    VARCHAR(300)    NOT NULL,
+    price	    DOUBLE(6,2)	    	    ,
     start_date      DATE            NOT NULL,
     end_date        DATE            NOT NULL,
     duration        INT		            ,

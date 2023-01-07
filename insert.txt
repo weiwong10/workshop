@@ -99,26 +99,26 @@ VALUES(3, '30 Days', 1000.00, 'Your trip will be place on the top for 1 months')
 
 /*---------------------------Trip---------------------------------------*/
 
-INSERT INTO Trip(title, start_date, end_date, duration, max_people, accommodation, description, username, themeID)
-VALUES('Trip 1', '2022-11-20', '2022-11-23', 1, 3, 'Appartment', 'This trip is about exploring the Kuala Lumpur', 'C10000', 4);
+INSERT INTO Trip(title, price, start_date, end_date, duration, max_people, accommodation, description, username, themeID)
+VALUES('Trip 1', 100,'2022-11-20', '2022-11-23', 1, 3, 'Appartment', 'This trip is about exploring the Kuala Lumpur', 'C10000', 4);
 
-INSERT INTO Trip(title, start_date, end_date, duration, max_people, accommodation, description, username, themeID, featuredID)
-VALUES('Trip 2','2022-11-21', '2022-11-24', 3, 2, 'Hostel', 'This purpose of the trip is to explore the nature side in the Kuala Lumpur', 'C10001', 4, 1);
+INSERT INTO Trip(title, price, start_date, end_date, duration, max_people, accommodation, description, username, themeID, featuredID)
+VALUES('Trip 2', 100, '2022-11-21', '2022-11-24', 3, 2, 'Hostel', 'This purpose of the trip is to explore the nature side in the Kuala Lumpur', 'C10001', 4, 1);
 
-INSERT INTO Trip(title, start_date, end_date, duration, max_people, accommodation, description, username, themeID, featuredID)
-VALUES('Trip 3', '2022-12-31', '2023-01-03', 3, 2, 'Motel', 'This trip is about exploring the food in the Kuala Lumpur and Selangor', 'C10005', 3, 2);
+INSERT INTO Trip(title, price, start_date, end_date, duration, max_people, accommodation, description, username, themeID, featuredID)
+VALUES('Trip 3', 100, '2022-12-31', '2023-01-03', 3, 2, 'Motel', 'This trip is about exploring the food in the Kuala Lumpur and Selangor', 'C10005', 3, 2);
 
-INSERT INTO Trip(title, start_date, end_date, duration, max_people, accommodation, description, username, themeID, featuredID)
-VALUES('Trip 4', '2023-01-05', '2023-01-08', 3, 6, 'Homestay', 'This trip is about exploring the Selangor', 'C10000', 4, 3);
+INSERT INTO Trip(title, price, start_date, end_date, duration, max_people, accommodation, description, username, themeID, featuredID)
+VALUES('Trip 4', 100, '2023-01-05', '2023-01-08', 3, 6, 'Homestay', 'This trip is about exploring the Selangor', 'C10000', 4, 3);
 
-INSERT INTO Trip(title, start_date, end_date, duration, max_people, accommodation, description, username, themeID, featuredID)
-VALUES('Trip 5', '2023-01-05', '2023-01-09', 4, 3, 'Resort', 'This trip is about exploring the Pantai Morib and State Park', 'C10000', 2, 1);
+INSERT INTO Trip(title, price, start_date, end_date, duration, max_people, accommodation, description, username, themeID, featuredID)
+VALUES('Trip 5', 100, '2023-01-05', '2023-01-09', 4, 3, 'Resort', 'This trip is about exploring the Pantai Morib and State Park', 'C10000', 2, 1);
 
-INSERT INTO Trip(title, start_date, end_date, duration, max_people, accommodation, description, username, themeID)
-VALUES('Trip 6', '2023-01-05', '2023-01-08', 3, 10, 'Bungalow', 'This trip is about exploring the State Park', 'C10001', 1);
+INSERT INTO Trip(title, price, start_date, end_date, duration, max_people, accommodation, description, username, themeID)
+VALUES('Trip 6', 500, '2023-01-05', '2023-01-08', 3, 10, 'Bungalow', 'This trip is about exploring the State Park', 'C10001', 1);
 
-INSERT INTO Trip(title, start_date, end_date, duration, max_people, accommodation, description, username, themeID)
-VALUES('Trip 7', '2023-01-06', '2023-01-10', 4, 5, 'Villa', 'Just relax and enjoy the view', 'C10005', 4);
+INSERT INTO Trip(title, price, start_date, end_date, duration, max_people, accommodation, description, username, themeID)
+VALUES('Trip 7', 900, '2023-01-06', '2023-01-10', 4, 5, 'Villa', 'Just relax and enjoy the view', 'C10005', 4);
 
 /*----------------------Transportation_Trip---------------------------------------*/
 

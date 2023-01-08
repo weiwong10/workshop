@@ -103,7 +103,6 @@ ALTER TABLE Featured AUTO_INCREMENT =100;
 CREATE TABLE Payment(
     paymentID       INT         AUTO_INCREMENT,
     payment_date    DATE        NOT NULL      ,
-    payment_method  VARCHAR(50) NOT NULL      ,
     amount          DOUBLE(6,2)               ,
 
     CONSTRAINT paymentID_PK PRIMARY KEY(paymentID)

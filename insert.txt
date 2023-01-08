@@ -242,9 +242,9 @@ INSERT INTO Travel_Itinerary(tripID, spotID, description)
 VALUES(7, 'S008', 'Stay for 1 day');
 /*---------------------------Payment----------------------------------------*/
 
-INSERT INTO Payment(paymentID, payment_date, payment_method, amount)
-VALUES (1, '2022-12-20', 'Online banking', 100);
+INSERT INTO Payment(paymentID, payment_date, amount)
+VALUES (1, '2022-12-20', 100);
 
-INSERT INTO Payment(paymentID, payment_date, payment_method, amount)
-VALUES (2, '2022-12-21', 'Online banking', 1000);
+INSERT INTO Payment(paymentID, payment_date, amount)
+VALUES (2, '2022-12-21', 1000);
 

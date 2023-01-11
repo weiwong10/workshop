@@ -13,35 +13,37 @@
   <head>
     <meta charset="UTF-8">
     <meta name ="viewreport" content="width=device-width, initial-scale =1.0">
-    <title>Admin Report</title>
-    <h1 align="center">Report</h1>
+    <link rel="stylesheet" type="text/css" href="report.css">
+    <title>Travel Spot Report</title>
+    <h1 align="center">TRAVEL SPOT REPORT</h1>
 
   </head>
-  <body>
+<body>
 
-    <!---select date and method-->
-    <form name="bwdatesdata" action="" method="post" action="">
-        <table width="100%" height="117"  border="0">
-        <tr>
+<!---select date and method-->
+<form name="bwdatesdata" action="" method="post" action="">
+<table class="center_table">
+    <tr>
         <th width="27%" height="63" scope="row">Year: </th>
         <td width="73%">
         
-        <?php 
-            $query = "SELECT DISTINCT YEAR(start_date) FROM TRIP;";
-            $result = mysqli_query($conn,$query);
-        ?>
+          <?php 
+              $query = "SELECT DISTINCT YEAR(start_date) FROM TRIP;";
+              $result = mysqli_query($conn,$query);
+          ?>
 
-        <select name="year">
+          <select name="year">
+            <option value="null">--- Select Year ---</option>
             <?php while ($row = mysqli_fetch_array($result)):; ?>
-                <option value="<?php echo $row[0]?>"><?php echo $row[0]?></option>
+            <option value="<?php echo $row[0]?>"><?php echo $row[0]?></option>
             <?php endwhile;?>
-        </select>
+          </select>
         </td>
-        </tr>
-        <tr>
+    </tr>
+    <tr>
         <th width="27%" height="63" scope="row">Type: </th>
         <td width="73%">
-        <select name="month">
+          <select name="month">
             <option value="null">-- Select Month --</option>
             <option value="all">Whole Year</option>
             <option value="1">January</option>
@@ -56,18 +58,19 @@
             <option value="10">October</option>
             <option value="11">November</option>
             <option value="12">December</option>
-        </select>
-        </tr>
-        <tr>
+          </select>
+        </td>
+    </tr>
+    <tr>
         <th width="27%" height="63" scope="row"></th>
         <td width="73%">
-        <button class="btn-primary btn" type="submit" name="submit">Submit</button>
-        </tr>
-        </table>
-    </form>
-    <hr>
-      <div class="row">
-      <div class="col-xs-12">
+          <button class="btn-primary btn" type="submit" name="submit">Check</button>
+    </tr>
+</table>
+</form>
+<hr>
+<div class="row">
+<div class="col-xs-12">
     <?php
 
         if(isset($_POST['submit']))
@@ -81,7 +84,7 @@
             } 
             
             else{
-            ?>
+    ?>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
@@ -119,10 +122,10 @@
 
         var options = {
           title: 'Top Travel Spot Report',
-          width: 900,
           legend: { position: 'none' },
-          chart: { title: 'Top 10 Travel Spot Report in',
-                   subtitle: 'popularity by number of Trip' },
+          colors: ['#aaaa55'],
+          chart: { title: 'Top 10 Travel Spots',
+                   subtitle: 'popularity by number of trips' },
           bars: 'vertical', // Required for Material Bar Charts.
           axes: {
             x: {
@@ -139,12 +142,12 @@
       };
     </script>
 
-    <div id="top_x_div" style="width: 900px; height: 500px;"></div>
+    <div id="top_x_div" style="height: 500px;"></div>
 
     <?php
         }
       }
     ?>
 
-  </body>
+</body>
 </html>

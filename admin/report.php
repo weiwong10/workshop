@@ -10,51 +10,57 @@
 
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name ="viewreport" content="width=device-width, initial-scale =1.0">
-    <title>Resort Report</title>
-    <h1 align="center">Report</h1>
+    <link rel="stylesheet" type="text/css" href="report.css">
+    <title>Report</title>
+    <h1>REPORT</h1>
+</head>
+<body>
 
-  </head>
-  <body>
 
-    <!---select date and method-->
-    <form action="" method="post" action="">
-        <table width="100%" height="117"  border="0">
-        <tr>
+<form action="" method="post" action="">
+<table class="center_table">
+    <tr>
         <th width="27%" height="63" scope="row">Report Type: </th>
         <td width="73%">
-
-        <select name="type">
-            <option value="user">User</option>
-            <option value="spot">Travel Spot</option>
-            <option value="feature">Feature</option>
-        </select>
+            <select name="type">
+                <option value="user">--- Select ---</option>
+                <option value="user">User</option>
+                <option value="spot">Travel Spot</option>
+                <option value="feature">Feature</option>
+            </select>
         </td>
-        </tr>
-        <tr>
-            <th width="27%" height="63" scope="row"></th>
-            <td width="73%">
-            <button class="btn-primary btn" type="submit" name="submit">Submit</button>
-        </tr>
-        </table>
-    </form>
-    <hr>
+    </tr>
+    <tr>
+        <th width="27%" height="63" scope="row"></th>
+        <td width="73%">
+            <button class="btn-primary btn" type="submit" name="submit">Check</button>
+        </td>
+    </tr>
+</table>
+</form>
+    
+<hr>
 
-    <?php
-        if(isset($_POST['submit'])){
-            $type = $_POST['type'];
+<?php
+    if(isset($_POST['submit'])){
+        $type = $_POST['type'];
         
 
-        if($type == 'user'){
-            header('Location:reportUser.php');
-        }
-        elseif($type == 'spot'){
-            header('Location:reportSpot.php');
-        }
-        elseif($type == 'feature'){
-            header('Location:featureReport.php');
-        }
+    if($type == 'user'){
+        header('Location:reportUser.php');
     }
-    ?>
+    elseif($type == 'spot'){
+        header('Location:reportSpot.php');
+    }
+    elseif($type == 'feature'){
+        header('Location:featureReport.php');
+    }
+}
+?>
+
+
+</body>
+</html>

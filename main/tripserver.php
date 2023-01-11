@@ -73,7 +73,7 @@ if (isset($_POST['save']))
   }
   else
   {
-    mysqli_query($db, "INSERT INTO trip (title, price, start_date, end_date, duration, current_people, max_people, accommodation, description, username, themeID, paymentID, featuredID, image) VALUES ('$title', '$price', '$start_date', '$end_date', 0, 0, '$max_people', '$accommodation', '$description', '$username', '$themeID', NULL, NULL, '$file')");
+    mysqli_query($db, "INSERT INTO trip (title, price, start_date, end_date, duration, current_people, max_people, accommodation, description, created_date, username, themeID, paymentID, featuredID, image) VALUES ('$title', '$price', '$start_date', '$end_date', 0, 0, '$max_people', '$accommodation', '$description', CURRENT_DATE, '$username', '$themeID', NULL, NULL, '$file')");
 
     mysqli_query($db, "UPDATE trip SET duration = (SELECT DATEDIFF(end_date, start_date) + 1)");
 

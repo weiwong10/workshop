@@ -23,29 +23,29 @@
 
                 <div class="inputBox">
                     <span>full name :</span>
-                    <input type="text" placeholder="Name">
+                    <input type="text" placeholder="Name" required>
                 </div>
                 <div class="inputBox">
                     <span>email :</span>
-                    <input type="email" placeholder="example@example.com">
+                    <input type="email" placeholder="example@example.com" required>
                 </div>
                 <div class="inputBox">
                     <span>address :</span>
-                    <input type="text" placeholder="Address">
+                    <input type="text" placeholder="Address" required>
                 </div>
                 <div class="inputBox">
                     <span>city :</span>
-                    <input type="text" placeholder="City">
+                    <input type="text" placeholder="City" required>
                 </div>
 
                 <div class="flex">
                     <div class="inputBox">
                         <span>state :</span>
-                        <input type="text" placeholder="State">
+                        <input type="text" placeholder="State" required>
                     </div>
                     <div class="inputBox">
                         <span>Post code :</span>
-                        <input type="text" placeholder="Postcode">
+                        <input type="text" placeholder="Postcode" required>
                     </div>
                 </div>
 
@@ -61,25 +61,25 @@
                 </div>
                 <div class="inputBox">
                     <span>name on card :</span>
-                    <input type="text" placeholder="Name">
+                    <input type="text" placeholder="Name" required>
                 </div>
                 <div class="inputBox">
                     <span>credit card number :</span>
-                    <input type="number" placeholder="1111-2222-3333-4444">
+                    <input type="number" placeholder="1111-2222-3333-4444" required>
                 </div>
                 <div class="inputBox">
                     <span>exp month :</span>
-                    <input type="text" placeholder="00/00">
+                    <input type="text" placeholder="00/00" required>
                 </div>
 
                 <div class="flex">
                     <div class="inputBox">
                         <span>exp year :</span>
-                        <input type="number" placeholder="2022">
+                        <input type="number" placeholder="2022" required>
                     </div>
                     <div class="inputBox">
                         <span>CVV :</span>
-                        <input type="text" placeholder="123">
+                        <input type="text" placeholder="123" required>
                     </div>
                 </div>
 

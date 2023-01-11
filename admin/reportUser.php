@@ -13,37 +13,38 @@
   <head>
     <meta charset="UTF-8">
     <meta name ="viewreport" content="width=device-width, initial-scale =1.0">
-    <title>Admin Report</title>
-    <h1 align="center">Report</h1>
+    <link rel="stylesheet" type="text/css" href="report.css">
+    <title>User Report</title>
+    <h1 align="center">USER REPORT</h1>
 
   </head>
-  <body>
+<body>
 
     <!---select date and method-->
-    <form name="bwdatesdata" action="" method="post" action="">
-        <table width="100%" height="117"  border="0">
-        <tr>
+<form name="bwdatesdata" action="" method="post" action="">
+<table class="center_table">
+    <tr>
         <th width="27%" height="63" scope="row">Type: </th>
         <td width="73%">
-        <select name="type">
-            <option value="null">-- Select Type --</option>
-            <option value="rate">Top 10 User's Rating</option>
-            <option value="lead">Top 10 User's who the most trip</option>
-        </select>
-        </tr>
-        <tr>
-
+        	<select name="type">
+            	<option value="null">--- Select Type ---</option>
+            	<option value="rate">Top 10 User's Rating</option>
+            	<option value="lead">Top 10 User's with the most amount of trips</option>
+        	</select>
+    </tr>
+    <tr>
         <th width="27%" height="63" scope="row"></th>
         <td width="73%">
-        <button class="btn-primary btn" type="submit" name="submit">Submit</button>
-        </tr>
-        </table>
-    </form>
-    </div>
-    </div>
-    <hr>
-      <div class="row">
-      <div class="col-xs-12">
+        	<button class="btn-primary btn" type="submit" name="submit">Check</button>
+        </td>
+    </tr>
+</table>
+</form>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-xs-12">
     <?php
 
         if(isset($_POST['submit']))
@@ -55,7 +56,6 @@
                 echo"<meta http-equiv='refresh' content='0; url=reportUser.php'/>";
             } 
             elseif($type == "rate"){
-   
     ?>
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -89,8 +89,8 @@
 
         var options = {
           title: 'Top Users Rating Report',
-          width: 900,
           legend: { position: 'none' },
+          colors: ['#aaaa55'],
           chart: { title: 'Top 10 Users Report',
                    subtitle: 'popularity by rating of user' },
           bars: 'vertical', // Required for Material Bar Charts.
@@ -111,35 +111,35 @@
 
     <div id="top_x_div" style="width: 900px; height: 500px;"></div>
 
-      <?php
+    <?php
         }
         elseif($type == "lead")
         {
-      ?>
+    ?>
  
-        <form name="bwdatesdata" action="" method="post" action="">
-            <table width="100%" height="117"  border="0">
-            <tr>
-            <th width="27%" height="63" scope="row">Year: </th>
-            <td width="73%">
+<form name="bwdatesdata" action="" method="post" action="">
+<table class="center_table">
+    <tr>
+    	<th width="27%" height="63" scope="row">Year: </th>
+        <td width="73%">
             
-            <?php 
-                $query = "SELECT DISTINCT YEAR(start_date) FROM TRIP;";
-                $result = mysqli_query($conn,$query);
-            ?>
+        	<?php 
+           		$query = "SELECT DISTINCT YEAR(start_date) FROM TRIP;";
+            	$result = mysqli_query($conn,$query);
+        	?>
 
-            <select name="year">
-                <?php while ($row = mysqli_fetch_array($result)):; ?>
-                    <option value="<?php echo $row[0]?>"><?php echo $row[0]?></option>
-                <?php endwhile;?>
-            </select>
-            </td>
-            </tr>
-            <tr>
-            <th width="27%" height="63" scope="row">Type: </th>
-            <td width="73%">
+        	<select name="year">
+            	<?php while ($row = mysqli_fetch_array($result)):; ?>
+                	<option value="<?php echo $row[0]?>"><?php echo $row[0]?></option>
+            	<?php endwhile;?>
+        	</select>
+        </td>
+    </tr>
+    <tr>
+        <th width="27%" height="63" scope="row">Month: </th>
+        <td width="73%">
             <select name="month">
-                <option value="null">-- Select Month --</option>
+                <option value="null">--- Select Month ---</option>
                 <option value="all">Whole Year</option>
                 <option value="1">January</option>
                 <option value="2">February</option>
@@ -154,15 +154,16 @@
                 <option value="11">November</option>
                 <option value="12">December</option>
             </select>
-            </tr>
-            <tr>
-
-            <th width="27%" height="63" scope="row"></th>
-            <td width="73%">
-            <button class="btn-primary btn" type="submit" name="apply">Submit</button>
-            </tr>
-            </table>
-        </form>
+        </td>
+    </tr>
+    <tr>
+		<th width="27%" height="63" scope="row"></th>
+        <td width="73%">
+            <button class="btn-primary btn" type="submit" name="apply">Check</button>
+        </td>
+    </tr>
+</table>
+</form>
     <?php  
         }
 
@@ -213,7 +214,7 @@
                 echo "<script>alert('The admin password is incorrect. Please retry.');</script>";
                 echo "<script>alert('No Record Found');</script>";
                 echo"<meta http-equiv='refresh' content='0; url=reportUser.php'/>";
-           }
+           	}
 
 
            ?>
@@ -221,10 +222,10 @@
 
         var options = {
           title: 'Top Users Rating Report',
-          width: 900,
           legend: { position: 'none' },
+          colors: ['#aaaa55'],
           chart: { title: 'Top 10 Users Report',
-                   subtitle: 'popularity by rating of user' },
+                   subtitle: 'the most amount of trips' },
           bars: 'vertical', // Required for Material Bar Charts.
           axes: {
             x: {
@@ -241,13 +242,13 @@
       };
     </script>
 
-    <div id="top_x_div" style="width: 900px; height: 500px;"></div>
+    <div id="top_x_div" style="height: 500px;"></div>
 
     <?php        
         }
     }
 
-      ?>
+    ?>
 
-  </body>
+</body>
 </html>

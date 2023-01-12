@@ -101,8 +101,8 @@
         ?>
                 <h1 class="related">Report</h1>
 		        <hr>
-                        <table class="table table-bordered text-center table-warning">
-                            <tr>
+                        <table style="width: 100%; text-align: center; border: 1px solid #a3a375;">
+                            <tr style="background-color: #999966; color: white;">
                                 <td>Duration</td>
                                 <td>Price</td>
                                 <td>Total Trip</td>
@@ -111,9 +111,9 @@
                                <?php
                                     while ($row = mysqli_fetch_assoc($result)) {
                                 ?>
-                                <td><?php echo $row["duration"] ?></td>
-                                <td><?php echo $row["price"] ?></td>
-                                <td><?php echo $row["number"] ?></td>
+                                <td style="background-color: #ebebe0; padding: 8px;"><?php echo $row["duration"] ?></td>
+                                <td style="background-color: #e0e0d1; padding: 8px;"><?php echo $row["price"] ?></td>
+                                <td style="background-color: #ebebe0; padding: 8px;"><?php echo $row["number"] ?></td>
                             </tr>
                             <?php
                                 }

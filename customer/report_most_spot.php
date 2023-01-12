@@ -13,15 +13,16 @@
   <head>
     <meta charset="UTF-8">
     <meta name ="viewreport" content="width=device-width, initial-scale =1.0">
+    <link rel="stylesheet" type="text/css" href="report.css">
     <title>User Report</title>
-    <h1 align="center">Report</h1>
+    <h1 align="center">TRAVEL SPOT REPORT</h1>
 
   </head>
   <body>
 
     <!---select date and method-->
     <form name="bwdatesdata" action="" method="post" action="">
-        <table width="100%" height="117"  border="0">
+        <table class="center_table">
         <tr>
         <th width="27%" height="63" scope="row">Year: </th>
         <td width="73%">
@@ -32,6 +33,7 @@
         ?>
 
         <select name="year">
+            <option value="null">--- Select Year ---</option>
             <option value="all_year">All year</option>
             <?php while ($row = mysqli_fetch_array($result)):; ?>
                 <option value="<?php echo $row[0]?>"><?php echo $row[0]?></option>
@@ -43,6 +45,7 @@
         <th width="27%" height="63" scope="row"></th>
         <td width="73%">
         <select name="month">
+                    <option value="null">--- Select Month ---</option>
                     <option value="all">All</option>
                     <option value="1">January</option>
                     <option value="2">February</option>
@@ -62,15 +65,18 @@
         <th width="27%" height="63" scope="row">Report Type:</th>
         <td width="73%">
         <select name="type">
+          <option value="null">--- Select Type ---</option>
           <option value="host">Leader</option>
           <option value="join">Participant</option>
         </select>
+        </td>
         </tr>
 
         <tr>
         <th width="27%" height="63" scope="row"></th>
         <td width="73%">
-        <button class="btn-primary btn" type="submit" name="apply">Submit</button>
+        <button class="btn-primary btn" type="submit" name="apply">Check</button>
+        </td>
         </tr>
         </table>
     </form>
@@ -85,7 +91,7 @@
                 if($type == 'host'){
 
                     if($year == 'all_year' && $month == 'all'){
-                    $query = "SELECT spot_name, COUNT(t.tripID) AS 'trip' FROM trip t, travel_itinerary i, travel_spot s , users u WHERE t.tripID = i.tripID AND i.spotID = s.spotID AND t.username = u.username AND t.username = '$username' GROUP BY spot_name ORDER BY spot_name LIMIT 10;";
+                    $query = "SELECT spot_name, COUNT(t.tripID) AS 'trip' FROM trip t, travel_itinerary i, travel_spot s , users u WHERE t.tripID = i.tripID AND i.spotID = s.spotID AND t.username = u.username AND t.username = 'C10000' GROUP BY spot_name ORDER BY spot_name LIMIT 10;";
                     $result = mysqli_query($conn, $query);
                     }
                     elseif($year != 'all_year' && $month == 'all'){
@@ -145,10 +151,10 @@
 
         var options = {
           title: 'Top Visited Travel Spot Report',
-          width: 900,
           legend: { position: 'none' },
+          colors: ['#00b38f'],
           chart: { title: 'Top Visited Travel Spot Report',
-                   subtitle: 'popularity by number of Trip' },
+                   subtitle: 'popularity by number of trips' },
           bars: 'vertical', // Required for Material Bar Charts.
           axes: {
             x: {
@@ -165,7 +171,7 @@
       };
     </script>
 
-    <div id="top_x_div" style="width: 900px; height: 500px;"></div>
+    <div id="top_x_div" style="height: 500px;"></div>
 
 
         <?php
@@ -176,3 +182,6 @@
         }
         }
         ?>
+
+</body>
+</html>

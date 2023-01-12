@@ -41,7 +41,7 @@
         </td>
     </tr>
     <tr>
-        <th width="27%" height="63" scope="row">Type: </th>
+        <th width="27%" height="63" scope="row">Month: </th>
         <td width="73%">
             <select name="month">
                 <option value="null">-- Select Month --</option>

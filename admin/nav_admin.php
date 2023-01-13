@@ -17,31 +17,28 @@
 
 			<ul>
 				<li>
-					<!-- <a class="active" href="#">Dashboard</a> -->
-					<a href="#">Dashboard </i></a>
+					
+					<a href="report.php">Report </i></a>
+					
 				</li>
 				<li>
 					<a href="display.php">Manage User </i></a>
-					<!-- <div class="dropdown_menu">
-						<ul>
-							<li><a href="#">Update User</a></li>
-							<li><a href="#">Delete User</a></li>
-							<li><a href="#">View User</a></li> -->
-						<!-- </ul>
-					</div> -->
 				</li>
 				<li>
-					 <a href="travel.php">Travel Spot</i></a>
-				<!-- <li>
+					 <a href="featured.php">Manage Featured</i></a>
+				</li>
 				<li>
-					 <a href="#">Travel Spot Information</a></li>					  -->
+					<a href="theme.php">Manage Theme</i></a>
+				</li>
+				<li>
+					 <a href="travelSpot.php">Travel Spot</i></a>
 				</li>
 				<li>
 					<a href="#">My Profile <i class="fas fa-caret-down"></i></a>
 					<div class="dropdown_menu">
 						<ul>
-							<li><a href="manageProfile.php">Profile</a></li>
-							<li><a href="#">Logout</a></li>
+							<li><a href="displayProfile.php">Profile</a></li>
+							<li><a href="adminLogout.php">Logout</a></li>
 						</ul>
 				</li>
 			</ul>

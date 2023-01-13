@@ -4,7 +4,7 @@
     //Admin nav bar
     include("navAdmin/nav_admin.php");
 
-     $username = $_SESSION['username'];
+   $admin_username = $_SESSION['admin_username'];
 
 ?>
 

@@ -1,7 +1,7 @@
 <?php
 include "../connect.php";
 include("navAdmin/nav_admin.php");
-session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,21 +13,15 @@ session_start();
 </head>
 <body>
  <div>
-<nav class="navbar bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand">List of Users</a>
-    <form class="d-flex" role="search">
-      <input class="form-control me-2" type="text" placeholder="Search data" aria-label="Search">
-      <button class="btn btn-outline-success" type="submit">Search</button>
-    </form>
-    <div class="container-fluid">
-      <table class="table">
 
-      </table>
-</div>
-  </div>
-</nav>
-    <table class="table">
+<br>
+<div class="container" >
+ <form action="searchUser.php" class="d-flex" role="search" method="post">
+      <input name="search" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-1" type="submit">Search</button>
+    </form> 
+    <br>
+<table class="table table-light table-striped">
   <thead>
     <tr>
       <th scope="col">Username</th>
@@ -72,5 +66,3 @@ session_start();
 </div>
 </body>
 </html>
-
-<!-- <button class="btn btn-danger"><a href="delete.php? deleteusername='.$username.'"class="text-light">Delete</a></button> -->

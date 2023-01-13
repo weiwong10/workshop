@@ -2,9 +2,9 @@
     session_start();
     include_once '../connect.php';
     //Admin nav bar
-    //include_once 'adminNavBar.php';
+    include("nav_admin.php");
 
-     $username = $_SESSION['username'];
+     //$username = $_SESSION['username'];
 
 ?>
 

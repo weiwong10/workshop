@@ -1,6 +1,6 @@
 <?php
 include "../connect.php";
-include("navAdmin/nav_admin.php");
+include("nav_admin.php");
 
 ?>
 <!DOCTYPE html>

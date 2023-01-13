@@ -9,6 +9,7 @@ if ($result) {
     $name = $row['name'];
     $contactNo = $row['contactNo'];
     $email = $row['email'];
+    $status_acc = $row['status_acc'];
   }
 }
 
@@ -22,9 +23,9 @@ if (isset($_POST['submit'])) {
   $result = mysqli_query($conn, $sql);
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
-    // header('location: display.php');
+   
   } else {
-    // echo "updated successfully";
+    
     echo "Updated";
     header('location: display.php');
   } 
@@ -42,6 +43,10 @@ if (isset($_POST['submit'])) {
 
     <div class="container my-5">
     
+    <h1 class="text-center pb-5 display-4 fs-3">
+        Update User
+      </h1>
+
     <form method="post">
     <div class="form-group">
   <label>Name</label>
@@ -58,7 +63,7 @@ if (isset($_POST['submit'])) {
     <input type="text" class="form-control" placeholder="Enter Email"
     name="email" autocomplete="off" value=<?php echo $email;?>>
     </div>
-    <!--<form class="form-inline" method="post">-->
+   
   <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Status Account</label>
   <select name="status_acc" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
     <option selected>Choose...</option>

@@ -91,7 +91,7 @@
                 if($type == 'host'){
 
                     if($year == 'all_year' && $month == 'all'){
-                    $query = "SELECT spot_name, COUNT(t.tripID) AS 'trip' FROM trip t, travel_itinerary i, travel_spot s , users u WHERE t.tripID = i.tripID AND i.spotID = s.spotID AND t.username = u.username AND t.username = 'C10000' GROUP BY spot_name ORDER BY spot_name LIMIT 10;";
+                    $query = "SELECT spot_name, COUNT(t.tripID) AS 'trip' FROM trip t, travel_itinerary i, travel_spot s , users u WHERE t.tripID = i.tripID AND i.spotID = s.spotID AND t.username = u.username AND t.username = '$username' GROUP BY spot_name ORDER BY spot_name LIMIT 10;";
                     $result = mysqli_query($conn, $query);
                     }
                     elseif($year != 'all_year' && $month == 'all'){

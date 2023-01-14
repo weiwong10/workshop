@@ -73,7 +73,7 @@ if (isset($_POST['save']))
   }
   else
   {
-    mysqli_query($db, "INSERT INTO trip (title, price, start_date, end_date, duration, current_people, max_people, accommodation, description, created_date, username, themeID, paymentID, featuredID, image) VALUES ('$title', '$price', '$start_date', '$end_date', 0, 0, '$max_people', '$accommodation', '$description', CURRENT_DATE, '$username', '$themeID', NULL, NULL, '$file')");
+    mysqli_query($db, "INSERT INTO trip (title, price, start_date, end_date, duration, current_people, max_people, accommodation, description, created_date, featured_exp, username, themeID, paymentID, featuredID, image) VALUES ('$title', '$price', '$start_date', '$end_date', 0, 0, '$max_people', '$accommodation', '$description', CURRENT_DATE, NULL, '$username', '$themeID', NULL, NULL, '$file')");
 
     mysqli_query($db, "UPDATE trip SET duration = (SELECT DATEDIFF(end_date, start_date) + 1)");
 
@@ -174,6 +174,19 @@ if (isset($_POST['save5']))
     else
     {
       mysqli_query($db, "UPDATE trip SET featuredID = '$featuredID' WHERE tripID = (SELECT MAX(tripID) FROM (SELECT * FROM trip) as test WHERE username = '{$_SESSION['username']}')");
+
+      if($featuredID == 1)
+      {
+        mysqli_query($db, "UPDATE trip set featured_exp = (SELECT DATE_ADD(created_date, INTERVAL 3 DAY) FROM (SELECT * FROM trip) AS test WHERE tripID = (SELECT MAX(tripID) FROM (SELECT * FROM trip) as test_2 WHERE username = '{$_SESSION['username']}')) WHERE tripID = (SELECT MAX(tripID) FROM (SELECT * FROM trip) as test_2 WHERE username = '{$_SESSION['username']}')");
+      }
+      elseif($featuredID == 2)
+      {
+        mysqli_query($db, "UPDATE trip set featured_exp = (SELECT DATE_ADD(created_date, INTERVAL 1 WEEK) FROM (SELECT * FROM trip) AS test WHERE tripID = (SELECT MAX(tripID) FROM (SELECT * FROM trip) as test_2 WHERE username = '{$_SESSION['username']}')) WHERE tripID = (SELECT MAX(tripID) FROM (SELECT * FROM trip) as test_2 WHERE username = '{$_SESSION['username']}')");
+      }
+      elseif($featuredID == 3)
+      {
+        mysqli_query($db, "UPDATE trip set featured_exp = (SELECT DATE_ADD(created_date, INTERVAL 1 MONTH) FROM (SELECT * FROM trip) AS test WHERE tripID = (SELECT MAX(tripID) FROM (SELECT * FROM trip) as test_2 WHERE username = '{$_SESSION['username']}')) WHERE tripID = (SELECT MAX(tripID) FROM (SELECT * FROM trip) as test_2 WHERE username = '{$_SESSION['username']}')");
+      }
     
       header('location: ../payment/index.php');
     }

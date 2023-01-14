@@ -125,6 +125,7 @@ CREATE TABLE Trip(
     accommodation   VARCHAR(50)     DEFAULT NULL,
     description     VARCHAR(1000)           ,
     created_date    DATE	    	    ,
+    featured_exp    DATE	    DEFAULT NULL,
     username        VARCHAR(100)    NOT NULL,
     themeID         INT             NOT NULL,
     paymentID       INT             DEFAULT NULL,

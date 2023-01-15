@@ -2,6 +2,9 @@
   include "../connect.php";
   session_start();
   $username = $_SESSION['username'];
+  //new
+  $last_id = $_SESSION['last_id'];
+
 ?>
 
 
@@ -60,7 +63,7 @@ include('tripserver.php');
       <select name="featuredID">
       <option value="">--- Select ---</option> 
       <?php 
-      $sql = mysqli_query($db, "SELECT * FROM featured");
+      $sql = mysqli_query($conn, "SELECT * FROM featured");
       while ($featuredID = $sql->fetch_assoc())
       {
       ?>
@@ -73,6 +76,7 @@ include('tripserver.php');
     </tr>
     <tr>
       <td colspan="3">
+        <input type="hidden" name="tripID" value="<?php echo $last_id; ?>">
         <button class="btn" type="submit" name="save5" id="save5" >Complete</button>
       </td>  
     </tr>
@@ -93,6 +97,8 @@ include('tripserver.php');
       document.getElementById('ifYes').style.display = 'none';
     }
   }
+
+  
 </script>
 
 </body>

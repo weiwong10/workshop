@@ -14,38 +14,6 @@ body{
  background-color: none; 
 }
 
-.search{
-    width: 100%;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-.search form{
-    background: wheat;
-    width: 600px;
-    height: 55px;
-    display: flex;
-}
-
-.search form input{
-    flex: 1;
-    border: solid #334;
-    outline: none;
-}
-
-.search form button{
-    background: #0073ff;
-    padding: 10px 50px;
-    border: none;
-    outline: none;
-    color: aliceblue;
-    letter-spacing: 1px;
-    cursor: pointer;
-}
-
 
 .container{
   max-width: 1200px;
@@ -71,13 +39,6 @@ body{
   padding:20px;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0,0,0,.2);
-  display: none;
-}
-
-.container .box-container .box:nth-child(1),
-.container .box-container .box:nth-child(2),
-.container .box-container .box:nth-child(3){
-  display: inline-block;
 }
 
 .container .box-container .box .image{

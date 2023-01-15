@@ -20,7 +20,7 @@
 	<!--The nav bar-->
 		<div class="menu_bar">
 
-			<h1 class="logo"> Travel<span>Buddy</span><h1>
+			<h1 class="logo"> Trip<span>Buddy</span><h1>
 
 			<ul>
 				<li>
@@ -31,25 +31,20 @@
 					<div class="dropdown_menu">
 						<ul>
 							<li><a class="active" href="mainTrip.php">Join Trip</a></li>
-							<li><a href="#">Create Trip</a></li>
+							<li><a href="createtrip.php">Create Trip</a></li>
 							<li><a href="myTrip.php">My Trip</a></li>
+							<li><a href="tripHistory.php">Trip History</a></li>
 						</ul>
 					</div>
 				</li>
 				<li>
-					<a href="#">Payment <i class="fas fa-caret-down"></i></a>
-					<div class="dropdown_menu">
-						<ul>
-							<li><a href="#">Make Payment</a></li>
-							<li><a href="#">Payment History</a></li>
-						</ul>
-					</div>					
+					<a href="paymentHistory.php">Payment History</a>			
 				</li>
 				<li>
 					<a href="#">My Profile <i class="fas fa-caret-down"></i></a>
 					<div class="dropdown_menu">
 						<ul>
-							<li><a href="#">Profile</a></li>
+							<li><a href="../customer/profile.php">Profile</a></li>
 							<li><a href="../logout.php">Logout</a></li>
 						</ul>
 				</li>

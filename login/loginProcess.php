@@ -40,12 +40,12 @@ include "../connect.php";
 
 						$row = mysqli_fetch_assoc($result);
 						if($row['admin_username'] === $username && $row['password'] === $password)
-						{
+						{				
 							//To store the data into the session[admin_username] for future use
 							$_SESSION['admin_username'] = $row['admin_username'];
 
 							//To go for the customer login page
-							header("Location: ../admin/admin_login.php");
+							header("Location: ../admin/admin_login.php");							
 						}
 					}
 					else
@@ -65,11 +65,18 @@ include "../connect.php";
 						$row = mysqli_fetch_assoc($result);
 						if($row['username'] === $username && $row['password'] === $password)
 						{
-							//To store the data into the session[admin_username] for future use
-							$_SESSION['username'] = $row['username'];
+							
+							if($row['status_acc'] == 'Active' ){
+							
+								//To store the data into the session[admin_username] for future use
+								$_SESSION['username'] = $row['username'];
 
-							//To go for the customer login page
-							header("Location: ../main/main.php");
+								//To go for the customer login page
+								header("Location: ../main/main.php");
+							}
+							else{
+								header("Location: login.php?error=Your Account has been banned");
+							}
 						}
 					}
 					else

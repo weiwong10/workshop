@@ -22,7 +22,7 @@
 			}
 			else{
 
-            $sql = "SELECT * FROM travel_spot WHERE spot_name LIKE '%".$search."%' OR state LIKE '%".$search."%'";
+            $sql = "SELECT * FROM travel_spot WHERE spot_name LIKE '%".$search."%' OR state LIKE UPPER('%".$search."%')";
 			$result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
 
 			?>
@@ -81,9 +81,8 @@
 				echo"<meta http-equiv='refresh' content='0; url=travelspot1.php'/>";
 				}
 			?>
-			<div class="back">
-			<button onclick="window.open('http://localhost/workshop%202/travelspot1.php', '_self')">Back</button>
-			</div>
+
+            <div class="back"><a href="travelspot1.php">Back</a></div>
             </div>
 		<?php
 		}

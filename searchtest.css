@@ -79,8 +79,8 @@ body{
   }
   
   .container .box-container .box .content .btn:hover{
-    background-color: crimson;
-    border-color: crimson;
+    background-color: #0073ff;
+    border-color: #0073ff;
     color:#fff;
   }
   
@@ -99,7 +99,7 @@ body{
   }
   
   .container .box-container .box .content .icons span i{
-    color:crimson;
+    color: crimson;
     padding-right: 5px;
   }
 
@@ -140,7 +140,16 @@ body{
 }
 
 .back:hover{
-    background-color: crimson;
-    border-color: crimson;
+    background-color: #0073ff;
+    border-color: #0073ff;
     color:#fff;
   }
+
+.back a{
+  text-decoration: none;
+  color:#334;
+}
+  
+.back:hover a{
+  color: #fff;
+}

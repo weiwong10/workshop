@@ -40,57 +40,57 @@ include('tripserver.php');
     <tr>
       <td>
       <label>Title :</label><br>
-      <input class="input" type="text" name="title" value="<?php echo $title; ?>" placeholder="Title">
+      <input class="input" type="text" name="title" placeholder="Title">
       </td>
     </tr>
     <tr>      
       <td>
       <label>Price :</label><br>
-      <input class="input" type="text" name="price" value="<?php echo $price; ?>" placeholder="0000.00">
+      <input class="input" type="text" name="price" placeholder="0000.00">
       </td>     
     </tr>
     <tr>
       <td>
       <label>Start Date :</label><br>
-      <input class="input" type="date" id="datePickerId" name="start_date" value="<?php echo $start_date; ?>">
+      <input class="input" type="date" id="datePickerId" name="start_date">
       </td>     
     </tr>
     <tr>
       <td>
       <label>End Date :</label><br>
-      <input class="input" type="date" id="datePickerId2" name="end_date" value="<?php echo $end_date; ?>">
+      <input class="input" type="date" id="datePickerId2" name="end_date" >
       </td>     
     </tr>
     <tr>      
       <td>
       <label>Maximum Number Of People :</label><br>
-      <input class="input" type="text" name="max_people" value="<?php echo $max_people; ?>" placeholder="0">
+      <input class="input" type="text" name="max_people" placeholder="0">
       </td>     
     </tr>
     <tr>      
       <td>
       <label>Accommodation :</label><br>
-      <input class="input" type="text" name="accommodation" value="<?php echo $accommodation; ?>" placeholder="Accommodation">
+      <input class="input" type="text" name="accommodation" placeholder="Accommodation">
       </td>     
     </tr>
     <tr>      
       <td>
       <label>Description :</label><br>
-      <input class="input" type="text" name="description" value="<?php echo $description; ?>" placeholder="Description">
+      <input class="input" type="text" name="description" placeholder="Description">
       </td>     
     </tr>
-    <tr>      
+    <!--<tr>      
       <td>
-      <input class="input" type="hidden" name="username" value="<?php echo $_SESSION["username"]; ?>">
+      <input class="input" type="hidden" name="username" >
       </td>     
-    </tr>
+    </tr>-->
     <tr>      
       <td>
       <label>Theme :</label><br>
       <select class="input" name="themeID">
       <option value="">--- Select ---</option> 
       <?php 
-      $sql = mysqli_query($db, "SELECT * FROM theme");
+      $sql = mysqli_query($conn, "SELECT * FROM theme");
       while ($themeID = $sql->fetch_assoc())
       {
       ?>
@@ -105,7 +105,7 @@ include('tripserver.php');
     <tr>
       <td>
       <label>Trip Picture :</label><br>
-      <input class="input" type="file" name="image" id="image" value="<?php echo $file; ?>">  
+      <input class="input" type="file" name="image" id="image" accept="image/jpg, image/jpeg, image/png">  
       </td>     
     </tr>
     <tr>

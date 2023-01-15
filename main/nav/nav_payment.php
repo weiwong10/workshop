@@ -27,19 +27,19 @@
 					<a href="main.php">Home</a>
 				</li>
 				<li>
-					<a class="active" href="#">Trip <i class="fas fa-caret-down"></i></a>
+					<a href="#">Trip <i class="fas fa-caret-down"></i></a>
 					<div class="dropdown_menu">
 						<ul>
 							<li><a href="mainTrip.php">Join Trip</a></li>
 							<li><a href="createtrip.php">Create Trip</a></li>
-							<li><a class="active" href="myTrip.php">My Trip</a></li>
+							<li><a href="myTrip.php">My Trip</a></li>
 							<li><a href="tripHistory.php">Trip History</a></li>
 						</ul>
 					</div>
 				</li>
 				<li>
 				<li>
-					<a href="paymentHistory.php">Payment History</a>			
+					<a class="active" href="paymentHistory.php">Payment History</a>			
 				</li>			
 				</li>
 				<li>

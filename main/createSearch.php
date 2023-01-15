@@ -10,15 +10,18 @@
 </head>
 <body>
 
-		<?php include("nav/nav_home.php");
+		<?php include("nav/nav_createTrip.php");
 
 			include ("../connect.php");
+            session_start();
+            $username = $_SESSION['username'];
+            $last_id = $_SESSION['last_id'];
 
             $search = $_POST['search'];
 			
 			if(empty($search)){
 				echo "<script>alert('Please insert the keyword');</script>";
-				echo"<meta http-equiv='refresh' content='0; url=maintravelspot.php'/>";
+				echo"<meta http-equiv='refresh' content='0; url=createTrip2.php'/>";
 			}
 			else{
 
@@ -32,7 +35,6 @@
 			{
 
 			?>
-
                 <h1 class="heading">Search Result</h1>
                 <div class="box-container">
 
@@ -59,9 +61,9 @@
                             ?>
                         </p>
 
-                        <form action="mainInformation.php" method="post">
+                        <form action="travelDescription.php" method="post">
                             <input type="hidden" name="spotID" value="<?php echo $row["spotID"]; ?>">						
-                            <button class="btn" type="submit">Read More</button>
+                            <button class="btn" type="submit">Choose</button>
                         </form>
                         <div class="icons">
                             <span> <i class="fa-sharp fa-solid fa-location-pin"></i> <?php echo $row["state"];?> </span>
@@ -81,14 +83,14 @@
 				echo"<meta http-equiv='refresh' content='0; url=travelspot1.php'/>";
 				}
 			?>
-			<div class="back">
-			<button onclick="window.open('http://localhost/workshop%202/main/maintravelspot.php', '_self')">Back</button>
-			</div>
+            
+            <div class="back"><a href="createTrip2.php">Back</a></div>
+
+
             </div>
 		<?php
 		}
 		?>
-
 
 </body>
 </html>

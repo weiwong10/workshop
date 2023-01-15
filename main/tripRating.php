@@ -15,7 +15,8 @@ $tripID = $_POST['tripID'];
 <body>
     <?php
         include("nav/nav_myTrip.php");
-    ?>
+	
+	?>
 
     <h1 style="text-align: center; margin-top: 50px;">Feedback</h1>
     
@@ -26,14 +27,14 @@ $tripID = $_POST['tripID'];
 			<div class="caption">
             <form action="rate_sql.php" method="POST">
                 
-                                <label for="">Score: </label>
-                                <input type="number" name="score" class="form-control" placeholder="1 - 5" min="0" max="5" step="1" />
+				<label for="">Score: </label>
+				<input type="number" name="score" class="form-control" placeholder="1 - 5" min="0" max="5" step="1" />
            
-                                <label for="">Feedback: </label><br>
-                                <textarea rows="3" cols="90" name="feedback" placeholder="Feedback"></textarea>
+				<label for="">Feedback: </label><br>
+				<textarea rows="3" cols="90" name="feedback" placeholder="Feedback"></textarea>
                 <br>
-                                <input type="hidden" name="tripID" value="<?php echo $tripID; ?>">
-                                <button type="submit" name="rate" class="btn btn-primary">Submit</button>
+				<input type="hidden" name="tripID" value="<?php echo $tripID; ?>">
+				<button type="submit" name="rate" class="btn btn-primary">Submit</button>
 
             </form>
 			</div>
@@ -46,7 +47,7 @@ $tripID = $_POST['tripID'];
         <hr>
 		<?php
 			include "../connect.php";
-			$sql = "SELECT name, image, feedback, rating FROM trip t, trip_joining j, users u WHERE t.tripID = j.tripID AND j.username = u.username AND t.tripID = '".$tripID."'";
+			$sql = "SELECT name, u.image, feedback, rating FROM trip t, trip_joining j, users u WHERE t.tripID = j.tripID AND j.username = u.username AND t.tripID = '$tripID'";
 
 			$result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
 
@@ -90,7 +91,7 @@ $tripID = $_POST['tripID'];
 	?>
 	</section>
 
-    <div id="back"><a href="http://localhost/workshop%202/main/myTrip.php">Back</a></div>
+    <div id="back"><a href="tripHistory.php">Back</a></div>
 
 </body>
 </html>

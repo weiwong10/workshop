@@ -2,6 +2,7 @@
 	include "../connect.php";
 	session_start();
 	$username = $_SESSION['username'];
+    require('links.php'); 
 ?>
 
 
@@ -15,6 +16,31 @@
 	<!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">-->
 	<link rel="stylesheet" type="text/css" href="main_style.css">
 
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <style type="text/css">
+	
+	.availability-form{
+		margin-top: -50px;
+		z-index: 2;
+		position: relative;
+	}
+
+	@media screen and (max-width: 575px) {
+	.availability-form{
+		margin-top: 25px;
+		padding: 0 35px;
+	}
+
+	}
+</style>
+
 </head>
 
 <body>
@@ -25,12 +51,41 @@
             <div class="content">
                <span><b>Explore, Discover, Travel</b></span>
                <h3>travel arround the world</h3>
-               <a href="mainTrip.php" class="btn">Discover more</a>
+               <!--<a href="mainTrip.php" class="btn">Discover more</a>-->
             </div>
          </div>
 		</section>
 
-        <section>
+        <!-- check avilability form-->
+ <div class="container availability-form">
+ 	<div class="row">
+ 		<div class="col-lg-12 bg-white shadow p-4 rounded">
+ 			<h2 class="col-lg-3">Check Availability Trip</h2>
+ 			<form action="indexSearch.php" method="post">
+ 				<div class="row align-items-end" style="font-size: 20px;">
+ 					<div class="col-lg-3 mb-3">
+ 						<label class="form-label" style="font-weight: 500;">Start Date</label>
+ 						<input type="date" class="form-control shadow-none" name="start_date">
+ 					</div>
+                     <div class="col-lg-3 mb-3">
+ 						<label class="form-label" style="font-weight: 500;">End Date</label>
+ 						<input type="date" class="form-control shadow-none" name="end_date">
+ 					</div>
+ 					<div class="col-lg-3 mb-3">
+ 						<label class="form-label" style="font-weight: 500;">Travel Spot</label>
+                        <input type="text" class="form-control shadow-none" name="spot" placeholder ="Travel Spot Name">
+ 					</div>
+ 					<div class="col-lg-1 mb-lg-3 mt-2">
+ 						<button type="submit" class="btn text-black shadow-none custom-bg">Search</button>
+ 					</div>
+
+ 				</div>
+ 			</form>
+ 		</div>
+ 	</div>
+ </div>
+        
+
 
         <section class="services">
 

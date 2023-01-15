@@ -13,17 +13,16 @@
 	<title>Join Trip</title>
 </head>
 <body>
-	<?php include("nav/nav_myTrip.php")?>
+	<?php include("nav/nav_tripHistory.php")?>
 
-    <section class="container" id="c1">
+     <section class="container" id="c1">
 
         <h1 class="related">Hosted Trip</h1>
 		<hr>
 
         <?php
-
-            $host_trip = "SELECT tripID, start_date, duration, current_people, image, title, description, price FROM trip WHERE username = '$username' AND start_date > sysdate();";
-            $result = mysqli_query($conn,$host_trip) or die(mysqli_error($conn));
+             $trip_feature = "SELECT DISTINCT tripID, start_date, duration, image, title, description, price, current_people from trip WHERE username = '$username' AND start_date < sysdate();";
+             $result = mysqli_query($conn,$trip_feature) or die(mysqli_error($conn));
 
             if(mysqli_num_rows($result) > 0){
             ?>
@@ -37,7 +36,7 @@
                 <div class="image">
                     <?php 
                     echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'"/>';
-                    ?>
+                ?>
                 </div>
                 <div class="content">
                     <h3>
@@ -51,7 +50,7 @@
                     ?>
                     </p>
 
-                    <form action="hostTripDetails.php" method="post">
+                    <form action="historyHost.php" method="post">
                         <input type="hidden" name="tripID" value="<?php echo $row["tripID"]; ?>">						
                         <button class="btn" type="submit">View Detail</button>
                     </form>
@@ -105,24 +104,25 @@
 
     </section>
 
-    <section class="container" id="c0">
+    
+    <section class="container" id="c2">
 
-        <h1 class="related">Joined Trip</h1>
+        <h1 class="related">History Trip</h1>
 		<hr>
 
         <?php
-            $trip_feature = "SELECT DISTINCT t.tripID, start_date, duration, current_people, image, title, description, price from trip_joining j, trip t WHERE t.tripID IN (SELECT tripID from trip_joining WHERE username = '".$username."') AND start_date > sysdate();";
+            $trip_feature = "SELECT DISTINCT tripID, start_date, duration, duration, image, title, description, price, current_people from trip WHERE tripID IN (SELECT tripID from trip_joining WHERE username = '$username') AND start_date < sysdate();";
             $result = mysqli_query($conn,$trip_feature) or die(mysqli_error($conn));
-        
-            if(mysqli_num_rows($result) >0){
-        ?>
+            
+            if(mysqli_num_rows($result) > 0){
+            ?>
 
-    <div class="box-container" id="box-container">
+        <div class="box-container" id="box-container2">
             <?php
                 while ($row = mysqli_fetch_assoc($result)) {
             ?>
 
-            <div class="box" id="box">
+            <div class="box" id="box2">
                 <div class="image">
                     <?php 
                     echo '<img src="data:image/jpeg;base64,'.base64_encode($row['image']).'"/>';
@@ -140,9 +140,9 @@
                     ?>
                     </p>
 
-                    <form action="cancelTripDetails.php" method="post">
+                    <form action="tripRating.php" method="post">
                         <input type="hidden" name="tripID" value="<?php echo $row["tripID"]; ?>">						
-                        <button class="btn" type="submit">Cancel Booking</button>
+                        <button class="btn" type="submit">Rate</button>
                     </form>
 
                     <div class="icons">
@@ -160,23 +160,23 @@
 
         </div>
 
-        <div class="btn-load" id="load-more"> Load More </div><br>
+        <div class="btn-load" id="load-more2"> Load More </div><br>
 
         </div>
 
         <script>
-        let loadMoreBtn = document.querySelector('#load-more');
-        let currentItem = 3;
+        let loadMoreBtn2 = document.querySelector('#load-more2');
+        let currentItem2 = 3;
 
-        loadMoreBtn.onclick = () =>{
-        let boxes = [...document.querySelectorAll('#c0 #box-container #box')];
-        for (var i = currentItem; i < currentItem + 3; i++){
-        boxes[i].style.display = 'inline-block';
+        loadMoreBtn2.onclick = () =>{
+        let boxes2 = [...document.querySelectorAll('#c2 #box-container2 #box2')];
+        for (var j = currentItem; j < currentItem + 3; j++){
+        boxes2[j].style.display = 'inline-block';
         }
-        currentItem += 3;
+        currentItem2 += 3;
 
-        if(currentItem >= boxes.length){
-        loadMoreBtn.style.display = 'none';
+        if(currentItem2 >= boxes2.length){
+        loadMoreBtn2.style.display = 'none';
         }
         }
 

@@ -51,26 +51,25 @@ INSERT INTO travel_spot (spotID, spot_name, state, address, description, image) 
 /*---------------------------Transportation---------------------------------------------*/
 
 INSERT INTO Transportation(transportationID, trans_type)
-VALUES(1, 'No transportation');
+VALUES(1, 'Bus');
 
 INSERT INTO Transportation(transportationID, trans_type)
-VALUES(2, 'Bus');
+VALUES(2, 'Rail transport');
 
 INSERT INTO Transportation(transportationID, trans_type)
-VALUES(3, 'Rail transport');
+VALUES(3, 'Taxi');
 
 INSERT INTO Transportation(transportationID, trans_type)
-VALUES(4, 'Taxi');
+VALUES(4, 'Car');
 
 INSERT INTO Transportation(transportationID, trans_type)
-VALUES(5, 'Car');
+VALUES(5, 'Ferry');
 
 INSERT INTO Transportation(transportationID, trans_type)
-VALUES(6, 'Ferry');
+VALUES(6, 'Bicycle');
 
 INSERT INTO Transportation(transportationID, trans_type)
-VALUES(7, 'Bicycle');
-
+VALUES(7, 'No transportation');
 
 /*---------------------------Theme---------------------------------------*/
 
@@ -100,26 +99,26 @@ VALUES(3, '30 Days', 1000.00, 'Your trip will be place on the top for 1 months')
 
 /*---------------------------Trip---------------------------------------*/
 
-INSERT INTO Trip(title, price, start_date, end_date, duration, max_people, accommodation, description, username, themeID, created_date)
-VALUES('Trip 1', 100,'2022-11-20', '2022-11-23', 1, 3, 'Appartment', 'This trip is about exploring the Kuala Lumpur', 'C10000', 4, '2022-11-09');
+INSERT INTO Trip(start_date, end_date, duration, max_people, accommodation, description, username, themeID)
+VALUES('2022-11-20', '2022-11-23', 1, 3, 'Appartment', 'This trip is about exploring the Kuala Lumpur', 'C10000', 4);
 
-INSERT INTO Trip(title, price, start_date, end_date, duration, max_people, accommodation, description, username, themeID, featuredID, created_date)
-VALUES('Trip 2', 100, '2022-11-21', '2022-11-24', 3, 2, 'Hostel', 'This purpose of the trip is to explore the nature side in the Kuala Lumpur', 'C10001', 4, 1, '2022-11-09');
+INSERT INTO Trip(start_date, end_date, duration, max_people, accommodation, description, username, themeID, featuredID)
+VALUES('2022-11-21', '2022-11-24', 3, 2, 'Hostel', 'This purpose of the trip is to explore the nature side in the Kuala Lumpur', 'C10001', 4, 1);
 
-INSERT INTO Trip(title, price, start_date, end_date, duration, max_people, accommodation, description, username, themeID, featuredID, created_date)
-VALUES('Trip 3', 100, '2022-12-31', '2023-01-03', 3, 2, 'Motel', 'This trip is about exploring the food in the Kuala Lumpur and Selangor', 'C10005', 3, 2, '2022-12-20');
+INSERT INTO Trip(start_date, end_date, duration, max_people, accommodation, description, username, themeID, featuredID)
+VALUES('2022-12-31', '2023-01-03', 3, 2, 'Motel', 'This trip is about exploring the food in the Kuala Lumpur and Selangor', 'C10005', 3, 2);
 
-INSERT INTO Trip(title, price, start_date, end_date, duration, max_people, accommodation, description, username, themeID, featuredID, created_date)
-VALUES('Trip 4', 100, '2023-01-05', '2023-01-08', 3, 6, 'Homestay', 'This trip is about exploring the Selangor', 'C10000', 4, 3, '2023-01-02');
+INSERT INTO Trip(start_date, end_date, duration, max_people, accommodation, description, username, themeID, featuredID)
+VALUES('2023-01-05', '2023-01-08', 3, 6, 'Homestay', 'This trip is about exploring the Selangor', 'C10000', 4, 3);
 
-INSERT INTO Trip(title, price, start_date, end_date, duration, max_people, accommodation, description, username, themeID, featuredID, created_date)
-VALUES('Trip 5', 100, '2023-01-05', '2023-01-09', 4, 3, 'Resort', 'This trip is about exploring the Pantai Morib and State Park', 'C10000', 2, 1, '2023-01-02');
+INSERT INTO Trip(start_date, end_date, duration, max_people, accommodation, description, username, themeID, featuredID)
+VALUES('2023-01-05', '2023-01-09', 4, 3, 'Resort', 'This trip is about exploring the Pantai Morib and State Park', 'C10000', 2, 1);
 
-INSERT INTO Trip(title, price, start_date, end_date, duration, max_people, accommodation, description, username, themeID, created_date)
-VALUES('Trip 6', 500, '2023-01-05', '2023-01-08', 3, 10, 'Bungalow', 'This trip is about exploring the State Park', 'C10001', 1, '2023-01-03');
+INSERT INTO Trip(start_date, end_date, duration, max_people, accommodation, description, username, themeID)
+VALUES('2023-01-05', '2023-01-08', 3, 10, 'Bungalow', 'This trip is about exploring the State Park', 'C10001', 1);
 
-INSERT INTO Trip(title, price, start_date, end_date, duration, max_people, accommodation, description, username, themeID, created_date)
-VALUES('Trip 7', 900, '2023-01-06', '2023-01-10', 4, 5, 'Villa', 'Just relax and enjoy the view', 'C10005', 4, '2023-01-03');
+INSERT INTO Trip(start_date, end_date, duration, max_people, accommodation, description, username, themeID)
+VALUES('2023-01-06', '2023-01-10', 4, 5, 'Villa', 'Just relax and enjoy the view', 'C10005', 4);
 
 /*----------------------Transportation_Trip---------------------------------------*/
 
@@ -191,61 +190,61 @@ VALUES('C10002', 3, 'Nice trip', 3);
 */
 /*-----------------------------Travel_Itinerary--------------------------------*/
 
-INSERT INTO Travel_Itinerary(tripID, spotID, description)
-VALUES(1, 'S001', 'Just enjoy the happiness of shopping in the KLCC');
+INSERT INTO Travel_Itinerary(tripID, spotID, description, duration_stay)
+VALUES(1, 'S001', 'Just enjoy the happiness of shopping in the KLCC', 1);
 
-INSERT INTO Travel_Itinerary(tripID, spotID, description)
-VALUES(1, 'S002', 'We will go to the park outside the KLCC');
+INSERT INTO Travel_Itinerary(tripID, spotID, description, duration_stay)
+VALUES(1, 'S002', 'We will go to the park outside the KLCC', 1);
 
-INSERT INTO Travel_Itinerary(tripID, spotID, description)
-VALUES(2, 'S002', 'Just walk around the park and we have some activity at here');
+INSERT INTO Travel_Itinerary(tripID, spotID, description, duration_stay)
+VALUES(2, 'S002', 'Just walk around the park and we have some activity at here', 2);
 
-INSERT INTO Travel_Itinerary(tripID, spotID, description)
-VALUES(2, 'S003', 'Spend some time to watch the bird amd also improve our knowledge about the bird');
+INSERT INTO Travel_Itinerary(tripID, spotID, description, duration_stay)
+VALUES(2, 'S003', 'Spend some time to watch the bird amd also improve our knowledge about the bird', 1);
 
-INSERT INTO Travel_Itinerary(tripID, spotID, description)
-VALUES(3, 'S001', 'Spend some time for shopping');
+INSERT INTO Travel_Itinerary(tripID, spotID, description, duration_stay)
+VALUES(3, 'S001', 'Spend some time for shopping', 2);
 
-INSERT INTO Travel_Itinerary(tripID, spotID, description)
-VALUES(3, 'S004', 'Explore some food and also buy something in this market');
+INSERT INTO Travel_Itinerary(tripID, spotID, description, duration_stay)
+VALUES(3, 'S004', 'Explore some food and also buy something in this market', 1);
 
-INSERT INTO Travel_Itinerary(tripID, spotID, description)
-VALUES(4, 'S006', 'To enjoy the sea and also watch time sunshine');
+INSERT INTO Travel_Itinerary(tripID, spotID, description, duration_stay)
+VALUES(4, 'S006', 'To enjoy the sea and also watch time sunshine', 1);
 
-INSERT INTO Travel_Itinerary(tripID, spotID, description)
-VALUES(4, 'S007', 'We will stay here for 1 day');
+INSERT INTO Travel_Itinerary(tripID, spotID, description, duration_stay)
+VALUES(4, 'S007', 'We will stay here for 1 day', 1);
 
-INSERT INTO Travel_Itinerary(tripID, spotID, description)
-VALUES(4, 'S008', 'We will stay here for 1 day');
+INSERT INTO Travel_Itinerary(tripID, spotID, description, duration_stay)
+VALUES(4, 'S008', 'We will stay here for 1 day', 1);
 
-INSERT INTO Travel_Itinerary(tripID, spotID, description)
-VALUES(5, 'S006', 'We will stay here for 2 day');
+INSERT INTO Travel_Itinerary(tripID, spotID, description, duration_stay)
+VALUES(5, 'S006', 'We will stay here for 2 day', 2);
 
-INSERT INTO Travel_Itinerary(tripID, spotID, description)
-VALUES(5, 'S008', 'We will stay here for 2 day');
+INSERT INTO Travel_Itinerary(tripID, spotID, description, duration_stay)
+VALUES(5, 'S008', 'We will stay here for 2 day', 2);
 
-INSERT INTO Travel_Itinerary(tripID, spotID, description)
-VALUES(6, 'S008', 'We will stay here for 3 day');
+INSERT INTO Travel_Itinerary(tripID, spotID, description, duration_stay)
+VALUES(6, 'S008', 'We will stay here for 3 day', 3);
 
-INSERT INTO Travel_Itinerary(tripID, spotID, description)
-VALUES(7, 'S002', 'Enjoy the natural inside the KL city');
+INSERT INTO Travel_Itinerary(tripID, spotID, description, duration_stay)
+VALUES(7, 'S002', 'Enjoy the natural inside the KL city', 1);
 
-INSERT INTO Travel_Itinerary(tripID, spotID, description)
-VALUES(7, 'S003', 'Can enjoy the expirence of feeding bird');
+INSERT INTO Travel_Itinerary(tripID, spotID, description, duration_stay)
+VALUES(7, 'S003', 'Can enjoy the expirence of feeding bird', 1);
 
-INSERT INTO Travel_Itinerary(tripID, spotID, description)
-VALUES(7, 'S005', 'Can watch the panda');
+INSERT INTO Travel_Itinerary(tripID, spotID, description, duration_stay)
+VALUES(7, 'S005', 'Can watch the panda', 1);
 
-INSERT INTO Travel_Itinerary(tripID, spotID, description)
-VALUES(7, 'S006', 'Can enjoy the view of the sea');
+INSERT INTO Travel_Itinerary(tripID, spotID, description, duration_stay)
+VALUES(7, 'S006', 'Can enjoy the view of the sea', 1);
 
-INSERT INTO Travel_Itinerary(tripID, spotID, description)
-VALUES(7, 'S008', 'Stay for 1 day');
+INSERT INTO Travel_Itinerary(tripID, spotID, description, duration_stay)
+VALUES(7, 'S008', 'Stay for 1 day', 1);
 /*---------------------------Payment----------------------------------------*/
 
-INSERT INTO Payment(paymentID, payment_date, amount)
-VALUES (1, '2022-12-20', 100);
+INSERT INTO Payment(paymentID, payment_date, payment_method, amount)
+VALUES (1, '2022-12-20', 'Online banking', 100);
 
-INSERT INTO Payment(paymentID, payment_date, amount)
-VALUES (2, '2022-12-21', 1000);
+INSERT INTO Payment(paymentID, payment_date, payment_method, amount)
+VALUES (2, '2022-12-21', 'Online banking', 1000);
 

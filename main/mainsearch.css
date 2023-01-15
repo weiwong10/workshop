@@ -29,7 +29,7 @@ body{
   
   .container .box-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 350px));
     gap:20px;
   }
   
@@ -68,8 +68,12 @@ body{
     color:#777;
     line-height: 2;
     padding:15px 0;
+    height: 90px;
+    overflow: hidden;
+    margin-bottom: 20px;
   }
-  
+
+ 
   .container .box-container .box .content .btn{
     display: inline-block;
     padding:10px 30px;
@@ -79,8 +83,8 @@ body{
   }
   
   .container .box-container .box .content .btn:hover{
-    background-color: crimson;
-    border-color: crimson;
+    background-color: #0073ff;
+    border-color: #0073ff;
     color:#fff;
   }
   
@@ -140,7 +144,16 @@ body{
 }
 
 .back:hover{
-    background-color: crimson;
-    border-color: crimson;
-    color:#fff;
-  }
+  background-color: #0073ff;
+  border-color: #0073ff;
+  color:#fff;
+}
+
+.back a{
+text-decoration: none;
+color:#334;
+}
+
+.back:hover a{
+color: #fff;
+}

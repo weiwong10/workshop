@@ -14,7 +14,6 @@ if(isset($_POST['rate'])){
 	if($result){
         echo "<script>alert('Rate Success!!!');</script>";
         echo"<meta http-equiv='refresh' content='0; url=myTrip.php'/>";
-        echo $tripID, $score, $feedback;
 	} else {
         echo "<script>alert('Rate Failed!!!');</script>";
         echo"<meta http-equiv='refresh' content='0; url=myTrip.php'/>";

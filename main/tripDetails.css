@@ -122,36 +122,48 @@ html{
     cursor: pointer;
     border: 2px solid #0073ff;
 }
+
 .container{
-	max-width: 1500px;
-	width: 80%;
-	margin: 30px auto;
-	display: flex;
-	flex-direction: column;
-}
-
-.container .related{
-	font-size: 30px;
-}
-
-.container table{
-    font-size:20px;
-}
-
-.container table .btn{
-    display: inline-block;
-    padding:10px 30px;
-    border:1px solid #334;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding:5px 20px;
+  }
+  
+.container .heading{
+    font-size: 40px;
+    margin-bottom: 20px;
     color:#334;
-    font-size: 16px;
   }
   
-.container table .btn:hover{
-    background-color: crimson;
-    border-color: crimson;
-    color:#fff;
+  .container .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 200px));
+    gap:20px;
   }
   
+  .container .box-container .box{
+    background-color: #fff;
+    padding:20px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  }
+  
+  
+  .container .box-container .box .image{
+    margin-bottom: 20px;
+    overflow: hidden;
+    height: 150px;
+    border-radius: 5px;
+  }
+  
+  .container .box-container .box .image img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+
 #back{
 	margin-top: 5px;
     margin-left: 40%;

@@ -15,7 +15,7 @@ if(mysqli_num_rows($result)>0){
 
     if($current_people < $max_people){
         $trip_detail = "INSERT INTO trip_joining(username, tripID) VALUES('" . $username . "','" . $tripID . "')";
-
+        
         if(mysqli_query($conn, $trip_detail)){
 
             echo "<script>alert('Book Success!!!');</script>";

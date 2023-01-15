@@ -61,8 +61,13 @@
 		  <button type="submit" class="btn btn-primary">Login</button>
 		  </div>
 
-		 
-		  <br> 
+		 <br> 
+		  <p align="center">Forget password?
+		  <a href="#" onclick="window.open('http://localhost/workshop%202/login/password-reset.php')"; >
+		  	Reset Now
+		  </a>
+		  </p>
+			
 		  <p align="center">Do not have an Account?
 		  <a href="#" onclick="window.open('http://localhost/workshop%202/register/register.php')"; >
 		  	Register Now

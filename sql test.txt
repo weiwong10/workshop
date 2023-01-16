@@ -6,7 +6,7 @@ CREATE TABLE Admin(
     contactNo           VARCHAR(20)     NOT NULL,
     email               VARCHAR(50)     NOT NULL,
     password            VARCHAR(100)    NOT NULL,
-
+    image               BLOB            DEFAULT NULL,
     CONSTRAINT admin_PK PRIMARY KEY(admin_username)
 );
 

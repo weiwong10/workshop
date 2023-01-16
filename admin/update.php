@@ -68,7 +68,7 @@ if (isset($_POST['submit'])) {
   <select name="status_acc" class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
     <option selected>Choose...</option>
     <option value="Active">Active</option>
-    <option value="Unactive">Unactive</option>
+    <option value="Inactive">Inactive</option>
   </select>
   <div>
   <button type="submit" class="btn btn-primary my-1" name="submit">Submit</button>
